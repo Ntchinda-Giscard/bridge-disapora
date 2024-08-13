@@ -1,14 +1,14 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Enum
 from sqlalchemy.orm import relationship
-from src.bridgeDisapo.database import Base
+from bridgeDisapo.database import Base
 import enum
 from sqlalchemy import ForeignKey
 
 
 class Role(enum.Enum):
     CLIENT = "client"
-    ADMIN = 'admin'
-    STAFF = 'staff'
+    ADMIN = "admin"
+    STAFF = "staff"
 
 
 class User(Base):
@@ -19,7 +19,7 @@ class User(Base):
     lastname = Column(String, unique=False, nullable=True)
     email = Column(String, unique=True, index=True, nullable=False)
     password = Column(String, unique=False, nullable=False)
-    role = Column(enum.Enum(Role), unique=False, nullable=False, default=Role.CLIENT.value)
+    role = Column(Enum(Role), unique=False, nullable=False, default=Role.CLIENT.value)
     service_id = Column(Integer, ForeignKey("service.id"), nullable=True)
     service = relationship("Service", back_populates="user")
 

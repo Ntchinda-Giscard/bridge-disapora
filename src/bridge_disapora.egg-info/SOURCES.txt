@@ -1,0 +1,14 @@
+README.md
+setup.py
+src/bridgeDisapo/__init__.py
+src/bridgeDisapo/auth.py
+src/bridgeDisapo/crud.py
+src/bridgeDisapo/database.py
+src/bridgeDisapo/dependencies.py
+src/bridgeDisapo/main.py
+src/bridgeDisapo/models.py
+src/bridgeDisapo/schemas.py
+src/bridge_disapora.egg-info/PKG-INFO
+src/bridge_disapora.egg-info/SOURCES.txt
+src/bridge_disapora.egg-info/dependency_links.txt
+src/bridge_disapora.egg-info/top_level.txt
