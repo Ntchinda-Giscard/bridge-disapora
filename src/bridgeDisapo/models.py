@@ -20,7 +20,7 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     password = Column(String, unique=False, nullable=False)
     role = Column(enum.Enum(Role), unique=False, nullable=False, default=Role.CLIENT.value)
-    service_id = Column(Integer, ForeignKey("service.id"))
+    service_id = Column(Integer, ForeignKey("service.id"), nullable=True)
     service = relationship("Service", back_populates="user")
 
 
