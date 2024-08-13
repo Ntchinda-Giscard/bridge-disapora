@@ -17,6 +17,8 @@ class User(BaseModel):
     id: int
     email: str
     role: Role
+    firstname: str
+    lastname: str
 
     class Config:
         orm_mode = True
