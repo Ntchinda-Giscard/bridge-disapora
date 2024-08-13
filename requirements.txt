@@ -3,3 +3,4 @@ uvicorn[standard]
 sqlalchemy
 fastapi-jwt-auth
 pydantic
+-e .
