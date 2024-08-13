@@ -26,3 +26,4 @@ def admin_only_endpoint():
 @app.get("/client/", dependencies=[Depends(auth.role_required(schemas.Role.CLIENT))])
 def client_only_endpoint():
     return {"message": "Hello, Client!"}
+
