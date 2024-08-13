@@ -1,6 +1,9 @@
 fastapi
 uvicorn[standard]
 sqlalchemy
-fastapi-jwt-auth
 pydantic
--e .
+passlib[bcrypt]
+fastapi-jwt-auth
+python-dotenv
+alembic
+psycopg2-binary
