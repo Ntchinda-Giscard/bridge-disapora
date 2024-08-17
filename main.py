@@ -5,18 +5,13 @@ from sqlalchemy.orm import Session
 from bridgeDisapo.database import engine, get_db
 from app import models
 from pydantic import BaseModel
-from app.models import User
+from app.crud import create_user
+from app.schema import UserCreate
 
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-
-class UserCreate(BaseModel):
-    firstname: str
-    lastname: str
-    email: str
-    password: str
 
 @app.get("/")
 async def read_root():
@@ -24,25 +19,8 @@ async def read_root():
 
 @app.post("/add_user")
 async def add_user(user: UserCreate, db: Session = Depends(get_db)):
-
-    db_user = User(
-        firstname=user.firstname,
-        lastname=user.lastname,
-        email=user.email,
-        password=user.password
-    )
-
-    try:
-        db.add(db_user)
-        db.commit()
-        db.refresh(db_user)
-
-        return db_user
-    except Exception as e:
-        db.rollback()
-        raise e
-    finally:
-        db.close()
+    return create_user(user, db)
+    
 
 
 if __name__ == "__main__":

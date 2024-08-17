@@ -7,13 +7,13 @@ class Role(str, Enum):
     ADMIN="admin"
     STAFF="staff"
 
-class UserCreate(BaseModel):
-    # id: 
-    email: str
-    password: str
-    firstname: str
-    lastname: str
-    # role: Role
+# class UserCreate(BaseModel):
+#     # id: 
+#     email: str
+#     password: str
+#     firstname: str
+#     lastname: str
+#     # role: Role
 
 class User(BaseModel):
     # id: Optional[int]

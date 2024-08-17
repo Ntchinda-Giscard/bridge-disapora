@@ -19,7 +19,7 @@ class User(Base):
     lastname = Column(String, unique=False, nullable=True)
     email = Column(String, unique=True, index=True, nullable=False)
     password = Column(String, unique=False, nullable=False)
-    # role = Column(Enum(Role), unique=False, nullable=False, default=Role.CLIENT.value)
+    role = Column(String, unique=False, nullable=False, default="client")
     # service_id = Column(Integer, ForeignKey("service.id"), nullable=True)
     # service = relationship("Service", back_populates="user")
 
