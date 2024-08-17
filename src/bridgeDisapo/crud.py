@@ -18,7 +18,7 @@ def create_user(db: Session, user: schemas.UserCreate) -> Any:
     db_user = models.User(
         email = user.email,
         password = hashed_pwd,
-        firstname = user.firtnmae,
+        firstname = user.firstname,
         lastname = user.lastname,
     )
 

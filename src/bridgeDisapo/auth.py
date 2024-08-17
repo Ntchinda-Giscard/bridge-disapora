@@ -1,6 +1,6 @@
 from datetime import timedelta
 from typing import Any
-from fastapi import Depends, HTTPException, HttpException, status
+from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi_jwt_auth import AuthJWT
 from pydantic import BaseModel
